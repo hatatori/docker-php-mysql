@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./mysql/my.ini:/etc/mysql/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=cinema
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+    
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: 1234
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+ 
+  web:
+    build: .
+    container_name: php_apache
+    ports:
+      - "8081:80"
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+    
