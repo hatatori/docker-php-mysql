@@ -1,3 +1,10 @@
-Passo 1: `docker-compose up -d`<br>
-[http://localhost:8081/](http://localhost:8081/) index <br>
-[http://localhost:8082/](http://localhost:8082/) phpmyadmin
+### Docker
+Passo 1: Digite `windows + r` 
+<br>Passo 2: Escreva: `winget install -e --id Docker.DockerDesktop` 
+<br>Passo 3: Deixe o docker aberto (pode fechar, portanto que fique perto do relógio)
+<br>
+### Workbench
+Passo 3: Digite `windows + r` <br>
+Passo 4: Escreva: `winget install --id=Oracle.MySQLWorkbench  -e`<br>
+### Final
+Clique em `start.bat`
