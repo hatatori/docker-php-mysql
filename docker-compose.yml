@@ -3,7 +3,6 @@ services:
     image: mysql:latest
     volumes:
       - ./mysql:/var/lib/mysql
-      - ./mysql/my.ini:/etc/mysql/my.cnf
     environment:
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=cinema
@@ -40,4 +39,3 @@ services:
 networks:
   app-network:
     driver: bridge
-    
