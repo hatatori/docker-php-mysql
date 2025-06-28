@@ -6,6 +6,8 @@ services:
       MYSQL_ROOT_HOST: "%"
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: cinema
+    ports:
+      - 3306:3306
     volumes:
       - ./sql_data:/var/lib/mysql
     networks:
